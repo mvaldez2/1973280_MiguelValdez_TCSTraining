@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program Managers</title>
+    <script src="app.js"></script>
 </head>
 <body>
     <h1>Program Managers</h1>
-    <form action="POST">
+    <form>
         <h2>Add New Budget</h2>
         <p>
-            <label for="clientName">Client Name</label>
+            <label for="clientName"><span>Client Name:</span> </label>
             <input type="text" id="clientName">
         </p>
         <p>
-            <label for="projectName">Project Name</label>
+            <label for="projectName"><span>Project Name:</span></label>
             <input type="text" id="projectName">
         </p>
         <p>
-            <label for="budget">Budget</label>
+            <label for="budget"><span>Budget:</span></label>
             <input type="number" id="budget">
         </p>
         <input type="button" value="Add" onclick="onFormSubmit()">
