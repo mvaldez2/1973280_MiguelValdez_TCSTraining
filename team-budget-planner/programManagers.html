@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Managers</title>
+</head>
+<body>
+    <h1>Program Managers</h1>
+    <form action="POST">
+        <h2>Add New Budget</h2>
+        <p>
+            <label for="clientName">Client Name</label>
+            <input type="text" id="clientName">
+        </p>
+        <p>
+            <label for="projectName">Project Name</label>
+            <input type="text" id="projectName">
+        </p>
+        <p>
+            <label for="budget">Budget</label>
+            <input type="number" id="budget">
+        </p>
+        <input type="button" value="Add" onclick="onFormSubmit()">
+        <input type="button" value="Clear" onclick="clearForm()">
+    </form>
+    <h2><a href="index.html">Back</a></h2>
+</body>
+</html>
