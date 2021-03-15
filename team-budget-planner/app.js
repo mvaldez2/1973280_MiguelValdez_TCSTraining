@@ -1,13 +1,13 @@
-// Submits budget plan data to local storage in an array
+// Submits budget plan data to session storage in an array
 function onFormSubmit(){ 
     var plan = {
         clientName: document.getElementById("clientName").value,
         projectName: document.getElementById("projectName").value,
         budget: document.getElementById("budget").value
     };
-    var data = JSON.parse(localStorage.getItem('data')) || [];
+    var data = JSON.parse(sessionStorage.getItem('data')) || [];
     data.push(plan);
-    localStorage.setItem("data", JSON.stringify(data));
+    sessionStorage.setItem("data", JSON.stringify(data));
     clearForm();
 }
 function clearForm(){
@@ -17,7 +17,7 @@ function clearForm(){
 }
 
 //Parses the json object
-var plans = JSON.parse(localStorage.getItem('data'));
+var plans = JSON.parse(sessionStorage.getItem('data'));
 //Gets tbody element
 var tbody = document.getElementById('data');
 //To calculate total budget
