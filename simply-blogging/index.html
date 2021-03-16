@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Blogging</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Simply Blogging</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">Add Blog<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg></a>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <form action="index.html" class="container">
+        <h2 class="text-center">Add a new blog!</h2>
+        <div class="row mb-3">
+            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="title">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="article" class="col-sm-2 col-form-label">Article</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="article"></textarea>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="imageId" class="col-sm-2 col-form-label">Add Image</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="file" id="imageId">
+            </div>
+        </div>
+        <div class="text-center">
+            <input type="button" value="Add Blog" onclick="addBlog()" class="btn btn-primary" />
+            <input type="button" value="Reset" onclick="clearForm()" class="btn btn-secondary" />
+        </div>
+
+        <hr>
+    </form>
+
+
+    <div class="container">
+        <h2 class="text-center">Posts</h2>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto" id="data">
+                <!-- Posts get loaded here using the data id -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
