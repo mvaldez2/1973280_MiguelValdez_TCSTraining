@@ -35,7 +35,7 @@ for (let index = 0; index < posts.length; index++) {
         `</h3>
         </a >
         <div class="text-center">
-            <img src="` + posts[index].imageId + `" class="img-fluid " alt="..." style="width: 40%">
+            <img src="images/` + posts[index].imageId + `" class="img-fluid " alt="..." style="width: 40%">
         </div>
                     <p class="post-meta">Posted by
             <a href="#">User</a>
