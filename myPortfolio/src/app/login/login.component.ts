@@ -19,15 +19,12 @@ export class LoginComponent implements OnInit {
   constructor(public router: Router) { }
 
   ngOnInit(): void {
-    //when username and password is correct, you store the token
-
-
 
   }
 
-  signupPage(){
+  signupPage() {
     this.router.navigate(["signup"])
-  } 
+  }
 
   login() {
     let user1 = this.loginRef.get("user")?.value;  // get specific control value. 
@@ -38,13 +35,10 @@ export class LoginComponent implements OnInit {
     console.log(this.check);
     if ((user1 == this.username && pass1 == this.password) && (user1 != null && pass1 != null)) {
       sessionStorage.setItem("token", "123")
-      console.log("yay")
       this.check = true;
-      
+
       this.token = sessionStorage.getItem("token")
       this.router.navigate(["portfolio"])
-    } else {
-      console.log("nope")
     }
 
   }

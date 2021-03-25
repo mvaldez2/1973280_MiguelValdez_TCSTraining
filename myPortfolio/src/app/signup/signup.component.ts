@@ -9,23 +9,23 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  signupRef=new FormGroup({
-    fname:new FormControl(),
-    lname:new FormControl(),
-    user:new FormControl(),
-    pass:new FormControl()
+  signupRef = new FormGroup({
+    fname: new FormControl(),
+    lname: new FormControl(),
+    user: new FormControl(),
+    pass: new FormControl()
   });
 
-  constructor(public router:Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
 
-  loginPage(){
+  loginPage() {
     this.router.navigate(["login"])
-  } 
+  }
 
-  signup(){
+  signup() {
     sessionStorage.setItem("fname", this.signupRef.get("fname")?.value);
     sessionStorage.setItem("lname", this.signupRef.get("lname")?.value);
     sessionStorage.setItem("username", this.signupRef.get("user")?.value);

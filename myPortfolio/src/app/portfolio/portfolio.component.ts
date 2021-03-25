@@ -9,23 +9,23 @@ import { Router } from '@angular/router';
 })
 export class PortfolioComponent implements OnInit {
 
-  username=sessionStorage.getItem('username')
-  
-  contactRef=new FormGroup({
-    cName:new FormControl(),
-    cNo:new FormControl()
+  username = sessionStorage.getItem('username')
+
+  contactRef = new FormGroup({
+    cName: new FormControl(),
+    cNo: new FormControl()
   });
   contacts: Array<any> = JSON.parse(sessionStorage.getItem('contacts')!) || [];
 
-  constructor(public router:Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
-    console.log(JSON.parse(sessionStorage.getItem('contacts')!) )
+    console.log(JSON.parse(sessionStorage.getItem('contacts')!))
   }
 
-  addContact(){
+  addContact() {
     var contacts = JSON.parse(sessionStorage.getItem("contacts")!) || [];
-    
+
     contacts.push({
       name: this.contactRef.get("cName")?.value,
       number: this.contactRef.get("cNo")?.value
@@ -34,13 +34,13 @@ export class PortfolioComponent implements OnInit {
       name: this.contactRef.get("cName")?.value,
       number: this.contactRef.get("cNo")?.value
     })
-    
+
     sessionStorage.setItem("contacts", JSON.stringify(contacts));
     console.log(contacts)
 
   }
 
-  logOut(){
+  logOut() {
     sessionStorage.removeItem("token");
     this.router.navigate(["login"])
   }

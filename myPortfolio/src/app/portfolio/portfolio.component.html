@@ -2,7 +2,7 @@
     <h2>My Portfolio</h2>
     <h3>Welcome {{username}}</h3>
 </div>
-<form class="col-lg-6 offset-md-4" [formGroup]="contactRef" (ngSubmit)="addContact()" >
+<form class="col-lg-6 offset-md-4" [formGroup]="contactRef" (ngSubmit)="addContact()">
     <div class="row mb-3">
         <label for="cName" class="col-sm-1 col-form-label">Contact Name</label>
         <div class="col-sm-5">
@@ -30,19 +30,19 @@
 
     <table class="table table-dark table-striped table-hover ">
         <thead>
-          <tr>
-            <th scope="col">Contact Name</th>
-            <th scope="col">Contact Number</th>
-          </tr>
+            <tr>
+                <th scope="col">Contact Name</th>
+                <th scope="col">Contact Number</th>
+            </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let contact of contacts">
-            <td>{{contact.name}}</td>
-            <td>{{contact.number}}</td>
-          </tr>
-          
-        </tbody>
-      </table>
+            <tr *ngFor="let contact of contacts">
+                <td>{{contact.name}}</td>
+                <td>{{contact.number}}</td>
+            </tr>
 
-<button type="button" class="btn btn-primary " (click)=logOut()>Log Out</button>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary " (click)=logOut()>Log Out</button>
 </div>
