@@ -15,3 +15,36 @@ simply-blogging/screenshots/
 cart-management/cart-management.docx
 cart-management/cart-management.zip
 cart-management/screenshots/
+
+# compiled output
+myPortfolio/dist
+myPortfolio/tmp
+myPortfolio/out-tsc
+# Only exists if Bazel was run
+myPortfolio/bazel-out
+
+# dependencies
+myPortfolio/node_modules
+
+# profiling files
+myPortfolio/chrome-profiler-events*.json
+myPortfolio/speed-measure-plugin*.json
+
+# IDEs and editors
+myPortfolio/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# misc
+myPortfolio/.sass-cache
+myPortfolio/connect.lock
+myPortfolio/coverage
+myPortfolio/libpeerconnection.log
+myPortfolio/npm-debug.log
+myPortfolio/yarn-error.log
+myPortfolio/testem.log
+myPortfolio/typings
