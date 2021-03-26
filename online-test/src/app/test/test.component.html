@@ -1,5 +1,3 @@
-
-
 <div class="mx-auto" style="width: 600px;">
     <div class="row">
         <div class="span6" style="float: none; margin: 0 auto;">
@@ -7,7 +5,7 @@
                 <form [formGroup]="form" (ngSubmit)="submit()">
                     <div class="container mt-sm-5 my-1">
                         <div class="question ml-sm-5 pl-sm-5 pt-2">
-                            <div class="py-2 h5"><b>Q. {{question.question}}</b></div>
+                            <div class="py-2 h5"><b>#{{question.id}}. {{question.question}}</b></div>
                             <div class="form-group ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"
                                 *ngFor="let option of question.options">
                                 <label class="options">{{option}}
@@ -28,9 +26,6 @@
                 </form>
             </div>
 
-            <div *ngIf="questionsAns == 10">
-                You got {{rightAns}} / {{questionNum}} Correct!
-            </div>
 
         </div>
 
@@ -47,15 +42,28 @@
                     <h5 class="modal-title" id="exampleModalLabel">You have completed the test!</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div *ngIf="rightAns > 5" class="modal-body alert alert-success">
                     You got {{rightAns}} / {{questionNum}} Correct! You have passed.
                 </div>
                 <div *ngIf="rightAns < 6" class="modal-body alert alert-danger">
                     You got {{rightAns}} / {{questionNum}} Correct. Try again.
-                    <button (click) = "reload()" type="button" class="btn btn-warning" data-bs-dismiss="modal">Retry</button>
+                    <button (click)="reload()" type="button" class="btn btn-warning"
+                        data-bs-dismiss="modal">Retry</button>
+                </div>
+                <div class="modal-body">
+                    <b>Answered Correctly:</b>
+                    <div *ngFor="let ans of correctAns">
+                        <div class="py-2 alert-success"><b>#{{ans.id}}. {{ans.question}}</b></div>
+                    </div>
+                    <b>Answered Incorrectly:</b>
+                    <div *ngFor="let ans of incorrectAns">
+                        <div class="py-2 alert-danger"><b>#{{ans.id}}. {{ans.question}}</b></div>
+                        <div class="py-2 alert-info"> <b>Answer:</b> {{ans.answer}} </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    
+
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>

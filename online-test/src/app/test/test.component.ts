@@ -13,6 +13,8 @@ export class TestComponent implements OnInit {
   questionNum: any;
   questionsAns: any;
   rightAns: any;
+  correctAns: any;
+  incorrectAns: any;
   form = new FormGroup({
 
     option: new FormControl('', Validators.required)
@@ -24,6 +26,8 @@ export class TestComponent implements OnInit {
     this.questionNum = this.questions.length
     this.questionsAns = 0;
     this.rightAns = 0;
+    this.correctAns = []
+    this.incorrectAns = []
 
   }
 
@@ -36,9 +40,11 @@ export class TestComponent implements OnInit {
     this.questionsAns += 1
     if (answered == question.answer) {
       console.log("correct")
+      this.correctAns.push(question)
       this.rightAns += 1
     } else {
       console.log("wrong")
+      this.incorrectAns.push(question)
 
     }
 
