@@ -1,0 +1,65 @@
+
+
+<div class="mx-auto" style="width: 600px;">
+    <div class="row">
+        <div class="span6" style="float: none; margin: 0 auto;">
+            <div *ngFor="let question of questions">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="container mt-sm-5 my-1">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2">
+                            <div class="py-2 h5"><b>Q. {{question.question}}</b></div>
+                            <div class="form-group ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"
+                                *ngFor="let option of question.options">
+                                <label class="options">{{option}}
+                                    <input [attr.disabled]="question.selected" id="option" type="radio"
+                                        value="{{question.id +',' +option +',' + question.selected}}" name="option"
+                                        formControlName="option"> <span class="checkmark"></span> </label>
+
+                            </div>
+                            <div class="d-flex align-items-center pt-3">
+                                <button [attr.data-bs-toggle]="questionsAns !== 9 ? false:'modal' "
+                                    [attr.data-bs-target]="questionsAns !== 9 ? false:'#exampleModal'"
+                                    [attr.disabled]="question.selected" class="ml-auto mr-sm-5 btn btn-success"
+                                    type="submit" [disabled]="!form.valid">Submit</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <div *ngIf="questionsAns == 10">
+                You got {{rightAns}} / {{questionNum}} Correct!
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<div class="modal fade" data-backdrop="false" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">You have completed the test!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div *ngIf="rightAns > 5" class="modal-body alert alert-success">
+                    You got {{rightAns}} / {{questionNum}} Correct! You have passed.
+                </div>
+                <div *ngIf="rightAns < 6" class="modal-body alert alert-danger">
+                    You got {{rightAns}} / {{questionNum}} Correct. Try again.
+                    <button (click) = "reload()" type="button" class="btn btn-warning" data-bs-dismiss="modal">Retry</button>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
