@@ -13,9 +13,10 @@ export class EmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  storeUser(empRef:any){
+  storeTask(empRef:any){
     console.log(empRef);
     this.empSer.storeEmployee(empRef);
   }
 
+  
 }
