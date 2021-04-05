@@ -1,4 +1,4 @@
-const prompt = require("prompt");
+let prompt = require("prompt");
 let fs = require("fs");
 
 function loadPrompt() {
@@ -25,6 +25,7 @@ function loadPrompt() {
       // if it does not exist
       var data = [];
       pushData(result.fName, result.lName, result.gender, result.email, data);
+      console.log(json)
       debugger;
     }
   });

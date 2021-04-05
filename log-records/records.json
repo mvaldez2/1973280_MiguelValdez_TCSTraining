@@ -1,9 +1,1 @@
-[
-  {
-    "fName": "Miguel",
-    "lName": "Valdez",
-    "gender": "Male",
-    "email": "miguel@email.com",
-    "created": "2021-04-02 17:32:12"
-  }
-]
+[{"fName":"Miguel","lName":"Valdez","gender":"Male","email":"miguel@email.com","created":"2021-04-05 13:42:07"},{"fName":"Jose","lName":"Reyes","gender":"Male","email":"jose@email.com","created":"2021-04-05 13:43:14"},{"fName":"Yolanda","lName":"Martinez","gender":"Female","email":"yolanda@email.com","created":"2021-04-05 13:44:22"}]
