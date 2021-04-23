@@ -89,3 +89,7 @@ mongo-website/screenshots
 mongo-website/node_modules
 mongo-website/mongo-website.docx
 mongo-website/mongo-website.zip
+
+docker-pipeline/screenshots
+docker-pipeline/docker-pipeline.docx
+docker-pipeline docker-pipeline.zip
