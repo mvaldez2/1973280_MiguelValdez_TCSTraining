@@ -15,7 +15,7 @@ pipeline {
 		}
 		stage("Test"){
 			steps {
-			sh "node app.js"
+			sh "node docker-pipeline/app.js"
 		}
 		}
 		stage("Release the version"){
